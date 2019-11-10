@@ -179,7 +179,14 @@
     </property>
     <addaction name="action_Save"/>
    </widget>
+   <widget class="QMenu" name="menuScan">
+    <property name="title">
+     <string>Scan</string>
+    </property>
+    <addaction name="actionStart"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuScan"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="action_Save">
@@ -188,6 +195,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionStart">
+   <property name="text">
+    <string>Start</string>
    </property>
   </action>
  </widget>

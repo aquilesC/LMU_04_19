@@ -1,5 +1,5 @@
 from PyQt5.QtCore import QTimer
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt5 import uic
 import os
 import threading
@@ -36,6 +36,16 @@ class ScanWindow(QMainWindow):
 
         layout = self.centralwidget.layout()
         layout.addWidget(self.plot_widget)
+
+        self.action_Save.triggered.connect(self.save_clicked)
+
+    def save_clicked(self):
+        if not hasattr(self.experiment, 'currents'):
+            message_box = QMessageBox()
+            message_box.setText('No currents to save')
+            message_box.exec()
+        else:
+            self.experiment.save_data()
 
     def update_start_button(self):
         if self.experiment.scan_running:

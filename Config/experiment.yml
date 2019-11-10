@@ -4,6 +4,7 @@ User:
 Params:
   resistance: 100ohm
   port: /dev/ttyACM0  # COM3  COM5....
+  device_type: dummy # (Or real)
 
 Scan:
   start: 0V
@@ -13,3 +14,6 @@ Scan:
   channel_in: 0
   channel_out: 0
 
+Saving:
+  filename: IV_data
+  path: /home/aquiles/Data  # C:\\Users\\Aquiles\\Data
